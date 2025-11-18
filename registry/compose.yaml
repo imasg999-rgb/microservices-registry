@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+
+  db:
+    image: mysql:8.0
+    volumes:
+      - ./database:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    env_file:
+      - ./.env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PW}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER} 
+      MYSQL_PASSWORD: ${DB_PW}
