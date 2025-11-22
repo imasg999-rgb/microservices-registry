@@ -4,7 +4,8 @@ import logging
 import signal
 import atexit
 
-from flask import Flask, jsonify
+import requests
+from flask import Flask, jsonify, send_from_directory
 
 from microservices.utils.registry_client import (
     REGISTRY_BASE_URL,
@@ -20,14 +21,14 @@ SERVICE_DESCRIPTION = (
     "Template microservice that registers nd deregisters with the registry service."
 )
 
-SERVICE_URL = os.getenv("SERVICE_URL", "http://localhost:6000")
+SERVICE_URL = os.getenv("SERVICE_URL", "http://localhost:8080")
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./frontend/build', static_url_path='/')
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(SERVICE_NAME)
 
 
-@app.route("/", methods=["GET"])
+@app.route("/info", methods=["GET"])
 def root():
     return jsonify(
         {
@@ -43,6 +44,10 @@ def root():
             },
         }
     ), 200
+
+@app.route("/", methods=["GET"])
+def serve_react_app():
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route("/health", methods=["GET"])
@@ -71,7 +76,7 @@ def main():
     signal.signal(signal.SIGINT, handle_signal)
     signal.signal(signal.SIGTERM, handle_signal)
 
-    port = int(os.getenv("PORT", "6000"))
+    port = int(os.getenv("PORT", "8080"))
     app.run(host="0.0.0.0", port=port, debug=False)
 
 
