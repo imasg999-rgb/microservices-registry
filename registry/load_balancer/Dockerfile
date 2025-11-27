@@ -3,6 +3,6 @@ WORKDIR /reg
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-ENV FLASK_APP=index.py
-EXPOSE 4152
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:4152", "index:app"]
+ENV FLASK_APP=load_balancer.py
+EXPOSE 7993
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:7993", "load_balancer:app"]

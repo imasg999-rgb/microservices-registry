@@ -1,15 +1,22 @@
 services:
-  app:
+  reg-app:
     build: .
     ports:
-      - "7993:7993"
+      - "4152"
     env_file:
       - ./.env
     depends_on:
       - db
     environment:
       DB_HOST: db
-
+  load-balancer:
+    build: ./load_balancer/
+    ports:
+      - "7993:7993"
+    depends_on:
+      - reg-app
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   db:
     image: mysql:8.0
     volumes:

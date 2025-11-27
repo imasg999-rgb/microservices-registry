@@ -64,8 +64,8 @@ def login():
         }
         token = jwt.encode(payload, app.config['SECRET KEY'], algorithm='HS256')
         return jsonify({'token': token}), 200
-    
-    return jsonify({'message': f'Invalid Credentials'}), 401
+    password = bcrypt.hashpw((password).encode('utf-8'), PW_SALT,)
+    return jsonify({'message': f'Invalid Credentials {username}, {password}'}), 401
 
 # Decorator for POST/DELETE services
 def auth_required(f):
@@ -116,7 +116,7 @@ def get_services(user=None, access=None):
     reg_services = cursor.fetchall()
     cursor.close()
     conn.close()
-    return jsonify(reg_services)
+    return jsonify(reg_services), 200
 
 # POST Provision Endpoint
 @app.route('/services', methods=['POST'])
