@@ -1,7 +1,10 @@
 FROM python:3.10-slim
+
 WORKDIR /svc
-COPY requirements.txt .
+
+COPY microservices/core/microservice-working-template-service/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-EXPOSE 6000
-CMD ["python", "index.py"]
+
+COPY microservices /svc/microservices
+
+CMD ["python", "-m", "microservices.core.microservice-working-template-service.index"]

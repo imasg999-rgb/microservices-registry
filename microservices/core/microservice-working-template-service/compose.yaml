@@ -1,6 +1,8 @@
 services:
   app:
-    build: .
+    build:
+      context: ../../..
+      dockerfile: microservices/core/microservice-working-template-service/Dockerfile
     ports:
       - "6000:6000"
     env_file:
