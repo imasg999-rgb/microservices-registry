@@ -5,7 +5,7 @@ test
 
 2) Open up 2 terminal tabs
 one used for registry (cd /registry)
-one used for service (cd /microservices/core/microservice-working-template-service)
+one used for service (cd microservices/core/microservice-working-template-service)
 
 3) in both terminals, call "docker-compose up --build" (build docker container for registry)
 this should be reflected on Docker Desktop (under the containers tab)
