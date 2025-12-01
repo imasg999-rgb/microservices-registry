@@ -12,11 +12,10 @@ from microservices.utils.registry_client import (
     health_response,
 )
 
-from microservices.core.currency_converter.currency_converter import (
+from microservices.currency_converter.currency_converter import (
     convert_currency,
     CurrencyProviderError,
 )
-
 
 SERVICE_NAME = os.getenv("SERVICE_NAME", "currency_converter")
 SERVICE_DESCRIPTION = "Currency conversion microservice"

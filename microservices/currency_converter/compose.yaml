@@ -1,7 +1,7 @@
 services:
   currency_converter:
     build:
-      context: ../../..
+      context: ../..
       dockerfile: microservices/currency_converter/Dockerfile
     ports:
       - "8443:8443"
