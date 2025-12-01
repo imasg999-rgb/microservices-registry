@@ -1,0 +1,1482 @@
+{
+  "search_metadata": {
+    "id": "692cb861f607a9c264cc44f7",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/c45b4eaec9c22831/692cb861f607a9c264cc44f7.json",
+    "created_at": "2025-11-30 21:34:25 UTC",
+    "processed_at": "2025-11-30 21:34:25 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI1LTEyLTAxagcIARIDWVlacgcIARIDQVVTGh4SCjIwMjUtMTItMDdqBwgBEgNBVVNyBwgBEgNZWVpCAQFIAXABmAEB&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/c45b4eaec9c22831/692cb861f607a9c264cc44f7.html",
+    "prettify_html_file": "https://serpapi.com/searches/c45b4eaec9c22831/692cb861f607a9c264cc44f7.prettify",
+    "total_time_taken": 2.16
+  },
+  "search_parameters": {
+    "engine": "google_flights",
+    "hl": "en",
+    "gl": "ca",
+    "departure_id": "YYZ",
+    "arrival_id": "AUS",
+    "outbound_date": "2025-12-01",
+    "return_date": "2025-12-07",
+    "currency": "CAD"
+  },
+  "best_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 17:13"
+          },
+          "arrival_airport": {
+            "name": "Dallas Fort Worth International Airport",
+            "id": "DFW",
+            "time": "2025-12-01 20:00"
+          },
+          "duration": 227,
+          "airplane": "Boeing 737",
+          "airline": "American",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+          "travel_class": "Economy",
+          "flight_number": "AA 1111",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 173 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Dallas Fort Worth International Airport",
+            "id": "DFW",
+            "time": "2025-12-01 20:49"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 21:57"
+          },
+          "duration": 68,
+          "airplane": "Airbus A321",
+          "airline": "American",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+          "travel_class": "Economy",
+          "flight_number": "AA 3242",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 60 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 49,
+          "name": "Dallas Fort Worth International Airport",
+          "id": "DFW"
+        }
+      ],
+      "total_duration": 344,
+      "carbon_emissions": {
+        "this_flight": 233000,
+        "typical_for_this_route": 262000,
+        "difference_percent": -11
+      },
+      "price": 1490,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFCUVRFeE1URjhRVUV6TWpReUdnc0l5NHNKRUFJYUEwTkJSRGdjY0xyQUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJERlciLG51bGwsIkFBIiwiMTExMSJdLFsiREZXIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiQUEiLCIzMjQyIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 06:05"
+          },
+          "arrival_airport": {
+            "name": "Detroit Metropolitan Wayne County Airport",
+            "id": "DTW",
+            "time": "2025-12-01 07:45"
+          },
+          "duration": 100,
+          "airplane": "Canadair RJ 900",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 5031",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Carbon emissions estimate: 71 kg"
+          ],
+          "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+        },
+        {
+          "departure_airport": {
+            "name": "Detroit Metropolitan Wayne County Airport",
+            "id": "DTW",
+            "time": "2025-12-01 08:40"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 11:06"
+          },
+          "duration": 206,
+          "airplane": "Airbus A320",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 1218",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 180 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 55,
+          "name": "Detroit Metropolitan Wayne County Airport",
+          "id": "DTW"
+        }
+      ],
+      "total_duration": 361,
+      "carbon_emissions": {
+        "this_flight": 252000,
+        "typical_for_this_route": 262000,
+        "difference_percent": -4
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFFVERVd016RjhSRXd4TWpFNEdnc0lwcWdKRUFJYUEwTkJSRGdjY1AvVUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJEVFciLG51bGwsIkRMIiwiNTAzMSJdLFsiRFRXIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiREwiLCIxMjE4Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 06:10"
+          },
+          "arrival_airport": {
+            "name": "George Bush Intercontinental Airport",
+            "id": "IAH",
+            "time": "2025-12-01 09:11"
+          },
+          "duration": 241,
+          "airplane": "Airbus A319",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 1345",
+          "ticket_also_sold_by": [
+            "Air Canada"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 208 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "George Bush Intercontinental Airport",
+            "id": "IAH",
+            "time": "2025-12-01 10:01"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 11:07"
+          },
+          "duration": 66,
+          "airplane": "Airbus A320",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 2221",
+          "ticket_also_sold_by": [
+            "Air Canada"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 56 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 50,
+          "name": "George Bush Intercontinental Airport",
+          "id": "IAH"
+        }
+      ],
+      "total_duration": 357,
+      "carbon_emissions": {
+        "this_flight": 264000,
+        "typical_for_this_route": 262000,
+        "difference_percent": 1
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFWUVRFek5EVjhWVUV5TWpJeEdnc0lwcWdKRUFJYUEwTkJSRGdjY1AvVUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJJQUgiLG51bGwsIlVBIiwiMTM0NSJdLFsiSUFIIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiVUEiLCIyMjIxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 09:20"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 12:19"
+          },
+          "duration": 239,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Canada",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AC.png",
+          "travel_class": "Economy",
+          "flight_number": "AC 1043",
+          "ticket_also_sold_by": [
+            "United"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 245 kg"
+          ]
+        }
+      ],
+      "total_duration": 239,
+      "carbon_emissions": {
+        "this_flight": 245000,
+        "typical_for_this_route": 262000,
+        "difference_percent": -6
+      },
+      "price": 1810,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AC.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZ1pCUXpFd05ETWFDd2l0aFFzUUFob0RRMEZFT0J4d2t2TUgiLFtbIllZWiIsIjIwMjUtMTItMDEiLCJBVVMiLG51bGwsIkFDIiwiMTA0MyJdXV0="
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 06:00"
+          },
+          "arrival_airport": {
+            "name": "Miami International Airport",
+            "id": "MIA",
+            "time": "2025-12-01 09:35"
+          },
+          "duration": 215,
+          "airplane": "Airbus A319",
+          "airline": "American",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+          "travel_class": "Economy",
+          "flight_number": "AA 2589",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 197 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Miami International Airport",
+            "id": "MIA",
+            "time": "2025-12-01 14:53"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 17:04"
+          },
+          "duration": 191,
+          "airplane": "Boeing 737",
+          "airline": "American",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+          "travel_class": "Economy",
+          "flight_number": "AA 1466",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 157 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 318,
+          "name": "Miami International Airport",
+          "id": "MIA"
+        }
+      ],
+      "total_duration": 724,
+      "carbon_emissions": {
+        "this_flight": 356000,
+        "typical_for_this_route": 262000,
+        "difference_percent": 36
+      },
+      "price": 1010,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFCUVRJMU9EbDhRVUV4TkRZMkdnc0lpSlVHRUFJYUEwTkJSRGdjY01HMEJBPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJNSUEiLG51bGwsIkFBIiwiMjU4OSJdLFsiTUlBIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiQUEiLCIxNDY2Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 06:00"
+          },
+          "arrival_airport": {
+            "name": "John F. Kennedy International Airport",
+            "id": "JFK",
+            "time": "2025-12-01 08:10"
+          },
+          "duration": 130,
+          "airplane": "Canadair RJ 900",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 5066",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Carbon emissions estimate: 111 kg"
+          ],
+          "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+        },
+        {
+          "departure_airport": {
+            "name": "John F. Kennedy International Airport",
+            "id": "JFK",
+            "time": "2025-12-01 11:21"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 14:45"
+          },
+          "duration": 264,
+          "airplane": "Boeing 737",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 2323",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 201 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 191,
+          "name": "John F. Kennedy International Airport",
+          "id": "JFK"
+        }
+      ],
+      "total_duration": 585,
+      "carbon_emissions": {
+        "this_flight": 313000,
+        "typical_for_this_route": 262000,
+        "difference_percent": 19
+      },
+      "price": 1423,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFFVERVd05qWjhSRXd5TXpJekdnc0lpOWNJRUFJYUEwTkJSRGdjY1BLYUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJKRksiLG51bGwsIkRMIiwiNTA2NiJdLFsiSkZLIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiREwiLCIyMzIzIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 07:40"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-12-01 10:09"
+          },
+          "duration": 149,
+          "airplane": "Boeing 737",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 2988",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 125 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-12-01 11:03"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 12:36"
+          },
+          "duration": 153,
+          "airplane": "Airbus A321",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 2011",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 134 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 54,
+          "name": "Hartsfield-Jackson Atlanta International Airport",
+          "id": "ATL"
+        }
+      ],
+      "total_duration": 356,
+      "carbon_emissions": {
+        "this_flight": 260000,
+        "typical_for_this_route": 262000,
+        "difference_percent": -1
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFFVERJNU9EaDhSRXd5TURFeEdnc0lwcWdKRUFJYUEwTkJSRGdjY1AvVUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJBVEwiLG51bGwsIkRMIiwiMjk4OCJdLFsiQVRMIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiREwiLCIyMDExIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 11:00"
+          },
+          "arrival_airport": {
+            "name": "Chicago O'Hare International Airport",
+            "id": "ORD",
+            "time": "2025-12-01 12:05"
+          },
+          "duration": 125,
+          "airplane": "Embraer 175",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 3499",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 107 kg"
+          ],
+          "plane_and_crew_by": "Republic Airways DBA United Express"
+        },
+        {
+          "departure_airport": {
+            "name": "Chicago O'Hare International Airport",
+            "id": "ORD",
+            "time": "2025-12-01 13:00"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 16:00"
+          },
+          "duration": 180,
+          "airplane": "Boeing 737MAX 9 Passenger",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 622",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 123 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 55,
+          "name": "Chicago O'Hare International Airport",
+          "id": "ORD"
+        }
+      ],
+      "total_duration": 360,
+      "carbon_emissions": {
+        "this_flight": 231000,
+        "typical_for_this_route": 262000,
+        "difference_percent": -12
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZ3hWUVRNME9UbDhWVUUyTWpJYUN3aW1xQWtRQWhvRFEwRkVPQnh3LzlRRyIsW1siWVlaIiwiMjAyNS0xMi0wMSIsIk9SRCIsbnVsbCwiVUEiLCIzNDk5Il0sWyJPUkQiLCIyMDI1LTEyLTAxIiwiQVVTIixudWxsLCJVQSIsIjYyMiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 12:25"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-12-01 14:45"
+          },
+          "duration": 140,
+          "airplane": "Boeing 737",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 2835",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 125 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-12-01 15:51"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 17:31"
+          },
+          "duration": 160,
+          "airplane": "Airbus A321",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 1491",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 134 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 66,
+          "name": "Hartsfield-Jackson Atlanta International Airport",
+          "id": "ATL"
+        }
+      ],
+      "total_duration": 366,
+      "carbon_emissions": {
+        "this_flight": 260000,
+        "typical_for_this_route": 262000,
+        "difference_percent": -1
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFFVERJNE16VjhSRXd4TkRreEdnc0lwcWdKRUFJYUEwTkJSRGdjY1AvVUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJBVEwiLG51bGwsIkRMIiwiMjgzNSJdLFsiQVRMIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiREwiLCIxNDkxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 14:45"
+          },
+          "arrival_airport": {
+            "name": "Dulles International Airport",
+            "id": "IAD",
+            "time": "2025-12-01 16:27"
+          },
+          "duration": 102,
+          "airplane": "Embraer 175",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 3637",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 92 kg"
+          ],
+          "plane_and_crew_by": "Republic Airways DBA United Express"
+        },
+        {
+          "departure_airport": {
+            "name": "Dulles International Airport",
+            "id": "IAD",
+            "time": "2025-12-01 17:55"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 20:41"
+          },
+          "duration": 226,
+          "airplane": "Boeing 737",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 2337",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 186 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 88,
+          "name": "Dulles International Airport",
+          "id": "IAD"
+        }
+      ],
+      "total_duration": 416,
+      "carbon_emissions": {
+        "this_flight": 279000,
+        "typical_for_this_route": 262000,
+        "difference_percent": 6
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFWUVRNMk16ZDhWVUV5TXpNM0dnc0lwcWdKRUFJYUEwTkJSRGdjY1AvVUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJJQUQiLG51bGwsIlVBIiwiMzYzNyJdLFsiSUFEIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiVUEiLCIyMzM3Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 15:38"
+          },
+          "arrival_airport": {
+            "name": "Detroit Metropolitan Wayne County Airport",
+            "id": "DTW",
+            "time": "2025-12-01 17:09"
+          },
+          "duration": 91,
+          "airplane": "Canadair RJ 900",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 4881",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Carbon emissions estimate: 71 kg"
+          ],
+          "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+        },
+        {
+          "departure_airport": {
+            "name": "Detroit Metropolitan Wayne County Airport",
+            "id": "DTW",
+            "time": "2025-12-01 19:45"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 22:08"
+          },
+          "duration": 203,
+          "airplane": "Airbus A319",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 2578",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 194 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 156,
+          "name": "Detroit Metropolitan Wayne County Airport",
+          "id": "DTW"
+        }
+      ],
+      "total_duration": 450,
+      "carbon_emissions": {
+        "this_flight": 266000,
+        "typical_for_this_route": 262000,
+        "difference_percent": 2
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFFVERRNE9ERjhSRXd5TlRjNEdnc0lwcWdKRUFJYUEwTkJSRGdjY1AvVUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJEVFciLG51bGwsIkRMIiwiNDg4MSJdLFsiRFRXIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiREwiLCIyNTc4Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 15:45"
+          },
+          "arrival_airport": {
+            "name": "George Bush Intercontinental Airport",
+            "id": "IAH",
+            "time": "2025-12-01 18:38"
+          },
+          "duration": 233,
+          "airplane": "Boeing 737",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 2236",
+          "ticket_also_sold_by": [
+            "Air Canada"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 181 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "George Bush Intercontinental Airport",
+            "id": "IAH",
+            "time": "2025-12-01 20:03"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 21:06"
+          },
+          "duration": 63,
+          "airplane": "Boeing 737",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 2621",
+          "ticket_also_sold_by": [
+            "Air Canada"
+          ],
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 52 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 85,
+          "name": "George Bush Intercontinental Airport",
+          "id": "IAH"
+        }
+      ],
+      "total_duration": 381,
+      "carbon_emissions": {
+        "this_flight": 234000,
+        "typical_for_this_route": 262000,
+        "difference_percent": -11
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFWUVRJeU16WjhWVUV5TmpJeEdnc0lwcWdKRUFJYUEwTkJSRGdjY1AvVUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJJQUgiLG51bGwsIlVBIiwiMjIzNiJdLFsiSUFIIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiVUEiLCIyNjIxIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 17:10"
+          },
+          "arrival_airport": {
+            "name": "Minneapolis–Saint Paul International Airport",
+            "id": "MSP",
+            "time": "2025-12-01 18:47"
+          },
+          "duration": 157,
+          "airplane": "Embraer 175",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 3829",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "In-seat power outlet",
+            "Carbon emissions estimate: 146 kg"
+          ],
+          "plane_and_crew_by": "SkyWest DBA Delta Connection"
+        },
+        {
+          "departure_airport": {
+            "name": "Minneapolis–Saint Paul International Airport",
+            "id": "MSP",
+            "time": "2025-12-01 19:59"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 22:59"
+          },
+          "duration": 180,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 2749",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 184 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 72,
+          "name": "Minneapolis–Saint Paul International Airport",
+          "id": "MSP"
+        }
+      ],
+      "total_duration": 409,
+      "carbon_emissions": {
+        "this_flight": 331000,
+        "typical_for_this_route": 262000,
+        "difference_percent": 26
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFFVERNNE1qbDhSRXd5TnpRNUdnc0lwcWdKRUFJYUEwTkJSRGdjY1AvVUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJNU1AiLG51bGwsIkRMIiwiMzgyOSJdLFsiTVNQIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiREwiLCIyNzQ5Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 18:10"
+          },
+          "arrival_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-12-01 20:44"
+          },
+          "duration": 154,
+          "airplane": "Airbus A320",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 2714",
+          "ticket_also_sold_by": [
+            "WestJet"
+          ],
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 123 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Hartsfield-Jackson Atlanta International Airport",
+            "id": "ATL",
+            "time": "2025-12-01 22:50"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-02 00:28"
+          },
+          "duration": 158,
+          "airplane": "Airbus A321",
+          "airline": "Delta",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+          "travel_class": "Economy",
+          "flight_number": "DL 3098",
+          "ticket_also_sold_by": [
+            "WestJet"
+          ],
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "Live TV",
+            "Carbon emissions estimate: 134 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 126,
+          "name": "Hartsfield-Jackson Atlanta International Airport",
+          "id": "ATL"
+        }
+      ],
+      "total_duration": 438,
+      "carbon_emissions": {
+        "this_flight": 258000,
+        "typical_for_this_route": 262000,
+        "difference_percent": -2
+      },
+      "price": 1527,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFFVERJM01UUjhSRXd6TURrNEdnc0lwcWdKRUFJYUEwTkJSRGdjY1AvVUJnPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJBVEwiLG51bGwsIkRMIiwiMjcxNCJdLFsiQVRMIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiREwiLCIzMDk4Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Toronto Pearson International Airport",
+            "id": "YYZ",
+            "time": "2025-12-01 10:00"
+          },
+          "arrival_airport": {
+            "name": "Dulles International Airport",
+            "id": "IAD",
+            "time": "2025-12-01 11:45"
+          },
+          "duration": 105,
+          "airplane": "Embraer 175",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 3636",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Wi-Fi for a fee",
+            "Stream media to your device",
+            "Carbon emissions estimate: 92 kg"
+          ],
+          "plane_and_crew_by": "Republic Airways DBA United Express"
+        },
+        {
+          "departure_airport": {
+            "name": "Dulles International Airport",
+            "id": "IAD",
+            "time": "2025-12-01 13:05"
+          },
+          "arrival_airport": {
+            "name": "Austin-Bergstrom International Airport",
+            "id": "AUS",
+            "time": "2025-12-01 15:51"
+          },
+          "duration": 226,
+          "airplane": "Boeing 737",
+          "airline": "United",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+          "travel_class": "Economy",
+          "flight_number": "UA 1074",
+          "legroom": "30 in",
+          "extensions": [
+            "Average legroom (30 in)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 188 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        {
+          "duration": 80,
+          "name": "Dulles International Airport",
+          "id": "IAD"
+        }
+      ],
+      "total_duration": 411,
+      "carbon_emissions": {
+        "this_flight": 281000,
+        "typical_for_this_route": 262000,
+        "difference_percent": 7
+      },
+      "price": 1835,
+      "type": "Round trip",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+      "extensions": [
+        "Checked baggage for a fee",
+        "Bag and fare conditions depend on the return flight"
+      ],
+      "departure_token": "WyJDalJJVTNaRllXUjJjMGs0Ukc5QlMzYzFSV2RDUnkwdExTMHRMUzB0TFhaMFpuRXlOVUZCUVVGQlIydHpkVWRKUjFwclQwTkJFZzFWUVRNMk16WjhWVUV4TURjMEdnc0l2SmtMRUFJYUEwTkJSRGdjY01TQkNBPT0iLFtbIllZWiIsIjIwMjUtMTItMDEiLCJJQUQiLG51bGwsIlVBIiwiMzYzNiJdLFsiSUFEIiwiMjAyNS0xMi0wMSIsIkFVUyIsbnVsbCwiVUEiLCIxMDc0Il1dXQ=="
+    }
+  ],
+  "price_insights": {
+    "lowest_price": 1010,
+    "price_level": "typical",
+    "typical_price_range": [
+      640,
+      1100
+    ],
+    "price_history": [
+      [
+        1759291200,
+        742
+      ],
+      [
+        1759377600,
+        742
+      ],
+      [
+        1759464000,
+        773
+      ],
+      [
+        1759550400,
+        743
+      ],
+      [
+        1759636800,
+        743
+      ],
+      [
+        1759723200,
+        754
+      ],
+      [
+        1759809600,
+        743
+      ],
+      [
+        1759896000,
+        734
+      ],
+      [
+        1759982400,
+        734
+      ],
+      [
+        1760068800,
+        734
+      ],
+      [
+        1760155200,
+        744
+      ],
+      [
+        1760241600,
+        744
+      ],
+      [
+        1760328000,
+        744
+      ],
+      [
+        1760414400,
+        743
+      ],
+      [
+        1760500800,
+        743
+      ],
+      [
+        1760587200,
+        756
+      ],
+      [
+        1760673600,
+        747
+      ],
+      [
+        1760760000,
+        746
+      ],
+      [
+        1760846400,
+        746
+      ],
+      [
+        1760932800,
+        636
+      ],
+      [
+        1761019200,
+        637
+      ],
+      [
+        1761105600,
+        620
+      ],
+      [
+        1761192000,
+        620
+      ],
+      [
+        1761278400,
+        630
+      ],
+      [
+        1761364800,
+        764
+      ],
+      [
+        1761451200,
+        699
+      ],
+      [
+        1761537600,
+        685
+      ],
+      [
+        1761624000,
+        685
+      ],
+      [
+        1761710400,
+        685
+      ],
+      [
+        1761796800,
+        685
+      ],
+      [
+        1761883200,
+        671
+      ],
+      [
+        1761969600,
+        671
+      ],
+      [
+        1762056000,
+        674
+      ],
+      [
+        1762146000,
+        674
+      ],
+      [
+        1762232400,
+        674
+      ],
+      [
+        1762318800,
+        637
+      ],
+      [
+        1762405200,
+        674
+      ],
+      [
+        1762491600,
+        674
+      ],
+      [
+        1762578000,
+        675
+      ],
+      [
+        1762664400,
+        675
+      ],
+      [
+        1762750800,
+        675
+      ],
+      [
+        1762837200,
+        674
+      ],
+      [
+        1762923600,
+        674
+      ],
+      [
+        1763010000,
+        679
+      ],
+      [
+        1763096400,
+        679
+      ],
+      [
+        1763182800,
+        695
+      ],
+      [
+        1763269200,
+        695
+      ],
+      [
+        1763355600,
+        687
+      ],
+      [
+        1763442000,
+        715
+      ],
+      [
+        1763528400,
+        762
+      ],
+      [
+        1763614800,
+        762
+      ],
+      [
+        1763701200,
+        798
+      ],
+      [
+        1763787600,
+        766
+      ],
+      [
+        1763874000,
+        766
+      ],
+      [
+        1763960400,
+        819
+      ],
+      [
+        1764046800,
+        895
+      ],
+      [
+        1764133200,
+        952
+      ],
+      [
+        1764219600,
+        911
+      ],
+      [
+        1764306000,
+        880
+      ],
+      [
+        1764392400,
+        880
+      ],
+      [
+        1764478800,
+        1010
+      ]
+    ]
+  },
+  "airports": [
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "YYZ",
+            "name": "Toronto Pearson International Airport"
+          },
+          "city": "Toronto",
+          "country": "Canada",
+          "country_code": "CA",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQWPEoHJ9ZdKzv94rrhqqT-m_aOLtacPBnX8s8Fd4GzxCQ8BmgveJ72xmyMfMSLarPprt6XrklbwK-_tw",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQGhv7dw8LBbMsCv9kv586cMlQBryS9N16uYov7WUD7Mbc1QBEkyd7o1Tf1013cK2ZjzDJu2uYY3WF5w-iQkYUeu4tKg9DR1vjDtJ9vRcA"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "AUS",
+            "name": "Austin-Bergstrom International Airport"
+          },
+          "city": "Austin",
+          "country": "United States",
+          "country_code": "US",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRKdjkMcBZuGRD1MjnuLQvdGtpTk0RyjdYs0Z8JsPtfIjer-6VvmfmMLxzvBkeyUrhf_focikfda4rVHg",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQ73FSj9E8pKaNvjWKyEDQGfLV-pky_onARvOY-zHWvQ-hOuPJSqyyXzvyg4-kGGAcZxdO6T5SYGWBzrX8x6MSPq7gBHsSLzX9MYjFJWA"
+        }
+      ]
+    },
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "AUS",
+            "name": "Austin-Bergstrom International Airport"
+          },
+          "city": "Austin",
+          "country": "United States",
+          "country_code": "US",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRKdjkMcBZuGRD1MjnuLQvdGtpTk0RyjdYs0Z8JsPtfIjer-6VvmfmMLxzvBkeyUrhf_focikfda4rVHg",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQ73FSj9E8pKaNvjWKyEDQGfLV-pky_onARvOY-zHWvQ-hOuPJSqyyXzvyg4-kGGAcZxdO6T5SYGWBzrX8x6MSPq7gBHsSLzX9MYjFJWA"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "YYZ",
+            "name": "Toronto Pearson International Airport"
+          },
+          "city": "Toronto",
+          "country": "Canada",
+          "country_code": "CA",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQWPEoHJ9ZdKzv94rrhqqT-m_aOLtacPBnX8s8Fd4GzxCQ8BmgveJ72xmyMfMSLarPprt6XrklbwK-_tw",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQGhv7dw8LBbMsCv9kv586cMlQBryS9N16uYov7WUD7Mbc1QBEkyd7o1Tf1013cK2ZjzDJu2uYY3WF5w-iQkYUeu4tKg9DR1vjDtJ9vRcA"
+        }
+      ]
+    }
+  ]
+}
