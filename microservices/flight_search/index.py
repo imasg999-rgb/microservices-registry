@@ -24,7 +24,7 @@ SERVICE_DESCRIPTION = (
 
 SERVICE_URL = os.getenv("SERVICE_URL", "http://localhost:8081")
 
-app = Flask(__name__, static_folder='./frontend/dist', static_url_path='/')
+app = Flask(__name__, static_folder='./static', static_url_path='/')
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(SERVICE_NAME)
 
