@@ -2,6 +2,7 @@ import os
 import sys
 import logging
 import atexit
+import signal
 
 import requests
 from flask import Flask, jsonify, request, send_from_directory
@@ -20,7 +21,6 @@ from microservices.currency_converter.currency_converter import (
 SERVICE_NAME = os.getenv("SERVICE_NAME", "currency_converter")
 SERVICE_DESCRIPTION = "Currency conversion microservice"
 SERVICE_URL = os.getenv("SERVICE_URL", "https://currency_converter:8443")
-
 logging.basicConfig(
     level=logging.INFO,
     stream=sys.stdout,
@@ -95,7 +95,13 @@ def convert_route():
         logger.exception("Unexpected error in /convert")
         return jsonify({"error": "Internal server error"}), 500
 
-
+def handle_signal(signum, frame):
+    logger.info("Received signal %s; attempting deregistration", signum)
+    try:
+        deregister_from_registry()
+    finally:
+        sys.exit(0)
+        
 def main():
     register_with_registry(
         service_name=SERVICE_NAME,
@@ -104,7 +110,10 @@ def main():
     )
 
     atexit.register(deregister_from_registry)
-
+    
+    signal.signal(signal.SIGINT, handle_signal)
+    signal.signal(signal.SIGTERM, handle_signal)
+    
     port = int(os.getenv("PORT", "8443"))
 
     app.run(
