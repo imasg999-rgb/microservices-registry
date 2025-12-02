@@ -42,7 +42,11 @@ def incoming_request(path):
             headers=request.headers,
             data=request.get_data()
         )
-        return response.content
+        return (
+            response.content,
+            response.status_code,
+            [(k, v) for k, v in response.headers.items()]
+        )
     except Exception as e:
         
         return jsonify(f"Error passing request details: {e}"), 503
