@@ -4,9 +4,7 @@ import logging
 import signal
 import atexit
 from flask import Flask, jsonify, send_from_directory, request
-from dotenv import load_dotenv
-import os
-from microservices.live_flight.live_flight import search_flight
+from microservices.live_flight.live_flight import search_flight, get_nearby_flights
 
 
 from microservices.utils.registry_client import (
@@ -20,7 +18,7 @@ from microservices.utils.registry_client import (
 
 SERVICE_NAME = "live-flight"
 SERVICE_DESCRIPTION = (
-    "A service that retrieves live status data for a given flight."
+    "A service that retrieves live status data for a given flight and shows flights nearby Western."
 )
 
 SERVICE_URL = os.getenv("SERVICE_URL", "http://localhost:8084")
@@ -30,6 +28,12 @@ app = Flask(__name__, static_folder='./frontend/build', static_url_path='/')
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(SERVICE_NAME)
 
+# Serve Frontend
+@app.route("/", methods=["GET"])
+def serve_react_app():
+    return send_from_directory(app.static_folder, 'index.html')
+
+# Get Info about Service
 @app.route("/info", methods=["GET"])
 def root():
     return jsonify(
@@ -38,6 +42,8 @@ def root():
             "description": SERVICE_DESCRIPTION,
             "endpoints": {
                 "health": "/health",
+                "nearby_flights": "/api/nearby",
+                "search_flight": "/api/flight?flight=CALLSIGN",
             },
             "registry": {
                 "base_url": REGISTRY_BASE_URL,
@@ -47,24 +53,31 @@ def root():
         }
     ), 200
 
+
 @app.route("/health", methods=["GET"])
 def health():
     body, status_code = health_response(SERVICE_NAME)
     return jsonify(body), status_code
 
-# Serve Frontend
-@app.route("/", methods=["GET"])
-def serve_react_app():
-    return send_from_directory(app.static_folder, 'index.html')
+
+# API: Get nearby flights (within 50km of Western University)
+@app.route("/api/nearby", methods=["GET"])
+def get_nearby():
+    try:
+        data = get_nearby_flights()
+        return jsonify(data), 200
+    except Exception as e:
+        logger.error(f"Error in /api/nearby: {str(e)}")
+        return jsonify({"error": str(e)}), 500
 
 
-# API: /api/flight?flight=WJA123
+# API: Search by callsign /api/flight?flight=ACA787
 @app.route("/api/flight", methods=["GET"])
 def get_flight():
     flight_number = request.args.get("flight")
 
-    if not flight_number: # Empty input
-        return jsonify({"error": "Missing ?flight="}), 400
+    if not flight_number:  # Empty input
+        return jsonify({"error": "Missing ?flight= parameter"}), 400
 
     try:
         data = search_flight(flight_number)
@@ -72,6 +85,7 @@ def get_flight():
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
     except Exception as e:
+        logger.error(f"Error in /api/flight: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 

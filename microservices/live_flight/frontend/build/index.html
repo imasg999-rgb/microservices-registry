@@ -4,202 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Live Flight Tracker</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-                    Roboto, 'Helvetica Neue', Arial, sans-serif;
-                background: #ffffff;
-                color: #1a1a1a;
-                line-height: 1.6;
-            }
-
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 40px 20px;
-            }
-
-            header {
-                text-align: center;
-                margin-bottom: 60px;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-                font-weight: 600;
-                margin-bottom: 10px;
-                color: #000;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-                color: #666;
-            }
-
-            .search-section {
-                background: #f8f9fa;
-                padding: 30px;
-                border-radius: 12px;
-                margin-bottom: 40px;
-            }
-
-            .search-form {
-                display: flex;
-                gap: 12px;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            input[type='text'] {
-                flex: 1;
-                padding: 14px 18px;
-                font-size: 16px;
-                border: 2px solid #e0e0e0;
-                border-radius: 8px;
-                transition: border-color 0.2s;
-            }
-
-            input[type='text']:focus {
-                outline: none;
-                border-color: #4a90e2;
-            }
-
-            button {
-                padding: 14px 32px;
-                font-size: 16px;
-                font-weight: 500;
-                background: #000;
-                color: #fff;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                transition: background 0.2s;
-            }
-
-            button:hover {
-                background: #333;
-            }
-
-            button:active {
-                transform: scale(0.98);
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin-bottom: 20px;
-                color: #000;
-            }
-
-            .flights-grid {
-                display: grid;
-                gap: 20px;
-                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            }
-
-            .flight-card {
-                background: #fff;
-                border: 1px solid #e0e0e0;
-                border-radius: 12px;
-                padding: 24px;
-                transition: box-shadow 0.2s, transform 0.2s;
-            }
-
-            .flight-card:hover {
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                transform: translateY(-2px);
-            }
-
-            .flight-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 16px;
-                padding-bottom: 16px;
-                border-bottom: 1px solid #f0f0f0;
-            }
-
-            .callsign {
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: #000;
-            }
-
-            .status-badge {
-                padding: 4px 12px;
-                border-radius: 20px;
-                font-size: 0.85rem;
-                font-weight: 500;
-            }
-
-            .status-airborne {
-                background: #e3f2fd;
-                color: #1565c0;
-            }
-
-            .status-ground {
-                background: #f3e5f5;
-                color: #6a1b9a;
-            }
-
-            .flight-detail {
-                display: flex;
-                justify-content: space-between;
-                padding: 8px 0;
-                font-size: 0.95rem;
-            }
-
-            .detail-label {
-                color: #666;
-                font-weight: 500;
-            }
-
-            .detail-value {
-                color: #000;
-                font-weight: 400;
-            }
-
-            .loading {
-                text-align: center;
-                padding: 40px;
-                color: #666;
-                font-size: 1.1rem;
-            }
-
-            .error {
-                background: #ffebee;
-                color: #c62828;
-                padding: 16px 20px;
-                border-radius: 8px;
-                margin: 20px 0;
-                border-left: 4px solid #c62828;
-            }
-
-            .no-results {
-                text-align: center;
-                padding: 40px;
-                color: #666;
-                font-size: 1.1rem;
-            }
-
-            .coords {
-                font-family: 'Courier New', monospace;
-                font-size: 0.9rem;
-            }
-        </style>
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <div class="container">
             <header>
-                <h1>✈️ Live Flight Tracker</h1>
+                <h1><a href="">✈️ Live Flight Tracker</a></h1>
                 <p class="subtitle">
-                    Real-time flight information from OpenSky Network
+                    Real-time flight information near Western University
                 </p>
             </header>
 
@@ -208,7 +20,7 @@
                     <input
                         type="text"
                         id="flightNumber"
-                        placeholder="Enter flight number (e.g., ACA720)"
+                        placeholder="Enter callsign (e.g., ACA787)"
                         required
                     />
                     <button type="submit">Search</button>
@@ -216,7 +28,7 @@
             </div>
 
             <div id="defaultFlightsSection">
-                <h2 class="section-title">Live Canadian Flights</h2>
+                <h2 class="section-title">Nearby Flights (50km radius)</h2>
                 <div id="defaultFlights" class="flights-grid"></div>
             </div>
 
@@ -239,43 +51,33 @@
                 'searchResultsSection'
             );
 
-            // Load default flights on page load
+            // Load nearby flights on page load
             window.addEventListener('load', () => {
-                loadDefaultFlights();
+                loadNearbyFlights();
             });
 
-            async function loadDefaultFlights() {
+            async function loadNearbyFlights() {
                 defaultFlightsDiv.innerHTML =
-                    '<div class="loading">Loading live flights...</div>';
+                    '<div class="loading">Loading nearby flights...</div>';
 
                 try {
-                    // Try Canadian airline codes:
-                    // ACA is Air Canada
-                    // WJA is West Jet
-                    // TSC is Air Transat
-                    const queries = ['ACA', 'WJA', 'TSC'];
-                    let allFlights = [];
+                    const res = await fetch('/api/nearby');
+                    const data = await res.json();
 
-                    for (const query of queries) {
-                        const res = await fetch(`/api/flight?flight=${query}`);
-                        const data = await res.json();
-                        if (data.results && data.results.length > 0) {
-                            allFlights = allFlights.concat(
-                                data.results.slice(0, 2)
-                            );
-                        }
-                        if (allFlights.length >= 3) break;
+                    if (data.error) {
+                        defaultFlightsDiv.innerHTML = `<div class="error">${data.error}</div>`;
+                        return;
                     }
 
-                    if (allFlights.length === 0) {
+                    if (data.count === 0) {
                         defaultFlightsDiv.innerHTML =
-                            '<div class="no-results">No Canadian flights currently available</div>';
+                            '<div class="no-results">No flights currently in the area</div>';
                         return;
                     }
 
                     defaultFlightsDiv.innerHTML = '';
-                    // only show 3 flights
-                    allFlights.slice(0, 3).forEach((flight) => {
+                    // Show up to 6 flights
+                    data.results.slice(0, 6).forEach((flight) => {
                         defaultFlightsDiv.appendChild(createFlightCard(flight));
                     });
                 } catch (err) {
@@ -286,7 +88,7 @@
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
-                const flightNum = flightNumberInput.value.trim().toUpperCase();
+                const callsign = flightNumberInput.value.trim().toUpperCase();
                 searchResultsDiv.innerHTML =
                     '<div class="loading">Searching for flight...</div>';
 
@@ -295,7 +97,7 @@
 
                 try {
                     const res = await fetch(
-                        `/api/flight?flight=${encodeURIComponent(flightNum)}`
+                        `/api/flight?flight=${encodeURIComponent(callsign)}`
                     );
                     const data = await res.json();
 
@@ -307,8 +109,8 @@
                     if (data.count === 0) {
                         searchResultsDiv.innerHTML = `
                             <div class="no-results">
-                                No flights found matching "${flightNum}"<br>
-                                <small style="color: #999;">Try searching for: ACA720, WJA123, etc.</small>
+                                No flights found matching "${callsign}"<br>
+                                <small style="color: #999;">Try searching for: ACA787, WJA123, etc.</small>
                             </div>
                         `;
                         return;
@@ -332,27 +134,43 @@
                 const card = document.createElement('div');
                 card.className = 'flight-card';
 
-                const callsign = flight[1] ? flight[1].trim() : 'Unknown';
-                const onGround = flight[8];
-                const altitude = flight[7]
-                    ? Math.round(flight[7]) + ' m'
+                // Extract data from ADSB.lol format
+                const callsign = flight.flight
+                    ? flight.flight.trim()
+                    : flight.hex || 'Unknown';
+                const registration = flight.r || 'N/A';
+                const aircraftType = flight.t || 'N/A';
+                const altitude = flight.alt_baro
+                    ? flight.alt_baro + ' ft'
+                    : flight.alt_geom
+                    ? flight.alt_geom + ' ft'
                     : 'N/A';
-                const velocity = flight[9]
-                    ? Math.round(flight[9] * 3.6) + ' km/h'
+                const groundSpeed = flight.gs
+                    ? Math.round(flight.gs) + ' kts'
                     : 'N/A';
-                const country = flight[2] || 'Unknown';
+                const track = flight.track
+                    ? Math.round(flight.track) + '°'
+                    : 'N/A';
                 const latitude =
-                    flight[6] !== null ? flight[6].toFixed(4) : 'N/A';
+                    flight.lat !== undefined ? flight.lat.toFixed(4) : 'N/A';
                 const longitude =
-                    flight[5] !== null ? flight[5].toFixed(4) : 'N/A';
-                const heading =
-                    flight[10] !== null ? Math.round(flight[10]) + '°' : 'N/A';
+                    flight.lon !== undefined ? flight.lon.toFixed(4) : 'N/A';
                 const verticalRate =
-                    flight[11] !== null
-                        ? (flight[11] > 0 ? '↑ ' : flight[11] < 0 ? '↓ ' : '') +
-                          Math.abs(Math.round(flight[11])) +
-                          ' m/s'
+                    flight.baro_rate !== undefined && flight.baro_rate !== null
+                        ? (flight.baro_rate > 0
+                              ? '↑ '
+                              : flight.baro_rate < 0
+                              ? '↓ '
+                              : '') +
+                          Math.abs(Math.round(flight.baro_rate)) +
+                          ' ft/min'
                         : 'N/A';
+                const squawk = flight.squawk || 'N/A';
+
+                // Determine if on ground (some aircraft don't report this)
+                const onGround =
+                    flight.alt_baro === 'ground' ||
+                    (flight.alt_baro !== undefined && flight.alt_baro < 100);
 
                 card.innerHTML = `
                     <div class="flight-header">
@@ -364,32 +182,32 @@
                         </div>
                     </div>
                     <div class="flight-detail">
-                        <span class="detail-label">Country</span>
-                        <span class="detail-value">${country}</span>
+                        <span class="detail-label">Registration</span>
+                        <span class="detail-value">${registration}</span>
+                    </div>
+                    <div class="flight-detail">
+                        <span class="detail-label">Aircraft Type</span>
+                        <span class="detail-value">${aircraftType}</span>
                     </div>
                     <div class="flight-detail">
                         <span class="detail-label">Altitude</span>
                         <span class="detail-value">${altitude}</span>
                     </div>
                     <div class="flight-detail">
-                        <span class="detail-label">Longitude</span>
-                        <span class="detail-value">${longitude}</span>
+                        <span class="detail-label">Ground Speed</span>
+                        <span class="detail-value">${groundSpeed}</span>
                     </div>
                     <div class="flight-detail">
-                        <span class="detail-label">Latitude</span>
-                        <span class="detail-value">${latitude}</span>
-                    </div>
-                    <div class="flight-detail">
-                        <span class="detail-label">Velocity</span>
-                        <span class="detail-value">${velocity}</span>
-                    </div>
-                    <div class="flight-detail">
-                        <span class="detail-label">Heading</span>
-                        <span class="detail-value">${heading}</span>
+                        <span class="detail-label">Track</span>
+                        <span class="detail-value">${track}</span>
                     </div>
                     <div class="flight-detail">
                         <span class="detail-label">Vertical Rate</span>
                         <span class="detail-value">${verticalRate}</span>
+                    </div>
+                    <div class="flight-detail">
+                        <span class="detail-label">Squawk</span>
+                        <span class="detail-value">${squawk}</span>
                     </div>
                     <div class="flight-detail">
                         <span class="detail-label">Position</span>
