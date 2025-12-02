@@ -17,12 +17,12 @@ from microservices.utils.registry_client import (
     health_response,
 )
 
-SERVICE_NAME = "microservice-working-template-service"
+SERVICE_NAME = "airport_weather_forecast"
 SERVICE_DESCRIPTION = (
-    "Template microservice that registers nd deregisters with the registry service."
+    "Micro service to retrieve weather forecast for given location."
 )
 
-SERVICE_URL = os.getenv("SERVICE_URL", "http://localhost:8080")
+SERVICE_URL = os.getenv("SERVICE_URL", "http://localhost:8088")
 
 app = Flask(__name__, static_folder='./frontend/build', static_url_path='/')
 logging.basicConfig(level=logging.INFO)
@@ -57,12 +57,11 @@ def health():
     return jsonify(body), status_code
 
 
-# ADD MAIN SEARCH FUNCTION HERE!
 @app.route("/search/<city>/<country>", methods=["GET"])
 def weather_search(city, country):
     try:
         result = forcast(city, country)
-    except ValueError as e: # WHAT TO DO WITH THESE????????????????????
+    except ValueError as e: 
         return jsonify({"error": str(e)}), 400
     except Exception as e:
         return jsonify({"error": str(e)}), 400
@@ -89,7 +88,7 @@ def main():
     signal.signal(signal.SIGINT, handle_signal)
     signal.signal(signal.SIGTERM, handle_signal)
 
-    port = int(os.getenv("PORT", "8080"))
+    port = int(os.getenv("PORT", "8088"))
     app.run(host="0.0.0.0", port=port, debug=False)
 
 

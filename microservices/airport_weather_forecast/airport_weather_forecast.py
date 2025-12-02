@@ -24,7 +24,7 @@ def forcast(city: str, country: str):
         "latitude": lat, 
         "longitude": lon, 
         "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum", # get the min and max temp for each day, aswell as the daily precipitation
-        "forecast_days": 16, # get the forecast for 16 days (the max that open-meteo api allows)
+        "forecast_days": 14, # get the forecast for 2 weeks
         "timezone": "auto"
     }
 
