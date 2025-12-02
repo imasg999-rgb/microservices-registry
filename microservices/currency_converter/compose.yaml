@@ -1,0 +1,9 @@
+services:
+  currency_converter:
+    build:
+      context: ../..
+      dockerfile: microservices/currency_converter/Dockerfile
+    ports:
+      - "8443:8443"
+    env_file:
+      - ./.env

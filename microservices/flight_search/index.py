@@ -24,7 +24,7 @@ SERVICE_DESCRIPTION = (
 
 SERVICE_URL = os.getenv("SERVICE_URL", "http://localhost:8081")
 
-app = Flask(__name__, static_folder='./frontend/build', static_url_path='/')
+app = Flask(__name__, static_folder='./static', static_url_path='/')
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(SERVICE_NAME)
 
@@ -50,6 +50,9 @@ def root():
 def serve_react_app():
     return send_from_directory(app.static_folder, 'index.html')
 
+@app.route("/<path:path>", methods=["GET"])
+def serve_static_files(path):
+    return send_from_directory(app.static_folder, path)
 
 @app.route("/health", methods=["GET"])
 def health():
