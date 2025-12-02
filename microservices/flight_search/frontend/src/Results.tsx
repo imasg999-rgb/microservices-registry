@@ -17,23 +17,29 @@ function durationToHoursMinutes(duration: number) {
 
 const Flight = ({ flightInfo }: any) => {
   return (
-    <div className="flex justify-between items-center">
-      <div className="flex flex-col">
-        <span>{flightInfo.departure_airport.id}</span>
-        <span>{toTime12h(flightInfo.departure_airport.time)}</span>
+    <div>
+      <div>
+        <p className="text-xs gray">Flight No. {flightInfo.flight_number}</p>
       </div>
+      <div className="flex justify-between items-center">
+        <div className="flex flex-col">
+          <span>{flightInfo.departure_airport.id}</span>
+          <span>{toTime12h(flightInfo.departure_airport.time)}</span>
+        </div>
 
-      <div className="flex flex-col items-center">
-        <Separator className="w-24" />
-        <span className="text-xs">{durationToHoursMinutes(flightInfo.duration)}</span>
-        <Separator className="w-24" />
-      </div>
+        <div className="flex flex-col items-center">
+          <Separator className="w-24" />
+          <span className="text-xs">{durationToHoursMinutes(flightInfo.duration)}</span>
+          <Separator className="w-24" />
+        </div>
 
-      <div className="flex flex-col">
-        <span>{flightInfo.arrival_airport.id}</span>
-        <span>{toTime12h(flightInfo.arrival_airport.time)}</span>
+        <div className="flex flex-col">
+          <span>{flightInfo.arrival_airport.id}</span>
+          <span>{toTime12h(flightInfo.arrival_airport.time)}</span>
+        </div>
       </div>
     </div>
+
   );
 };
 
@@ -48,7 +54,6 @@ const Layover = ({ layoverInfo }: any) => {
 function FlightResult({ flightInfo }: any) {
   const informationOrder = [];
   const numFlights = flightInfo.flights.length;
-  console.log(flightInfo);
   if (flightInfo.hasOwnProperty("layovers")) {
     const numLayovers = flightInfo.layovers.length;
     let i = 0;
@@ -102,27 +107,6 @@ function FlightResult({ flightInfo }: any) {
             );
           }
         })}
-        {/* <Flight />
-        <Layover />
-        <Separator />
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col">
-            <span>LAX</span>
-            <span>2:00 PM</span>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <Separator className="w-24" />
-            <span className="text-xs">5h 50m</span>
-            <Separator className="w-24" />
-          </div>
-
-          <div className="flex flex-col">
-            <span>SFO</span>
-            <span>3:50 PM</span>
-          </div>
-        </div> */}
-
       </CardContent>
     </Card>
   );
