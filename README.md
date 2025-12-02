@@ -1,18 +1,134 @@
-# microservices-registry
-test
+# ✈️ microservices-registry
 
-1) Open Docker Desktop
+A microservices architecture project for CS4471 — Software Architecture
 
-2) Open up 2 terminal tabs
-one used for registry (cd /registry)
-one used for service (cd microservices/core/microservice-working-template-service)
+Welcome to our project repository! This system implements a **custom-built service registry** and a suite of **independent microservices**, all containerized with Docker and orchestrated locally. Built with industry best practices and #grindset.
 
-3) in both terminals, call "docker-compose up --build" (build docker container for registry)
-this should be reflected on Docker Desktop (under the containers tab)
+This README includes setup instructions, an overview of the project, and architecture documentation.
 
-4) in Docker Desktop > Containers tab > expand 'registry' containers > 'db-1' container ellipses > Open in Terminal > "mysql -u root -p" > pw="group4" > NOW IN SQL TERMINAL
-use for accessing/viewing from application databases
+---
 
-5) Registry whipped up locally @ Port-[7993](http://127.0.0.1:7993) | Template Service @ Port-[8080](http://127.0.0.1:8080)
+## 🚀 Quick Start
+#### 1️⃣ Start Docker
 
-6) 
+Make sure Docker Desktop is running.
+
+#### 2️⃣ Open Two Terminals
+
+* Terminal A → Registry:
+```bash
+cd registry
+```
+
+* Terminal B → Template Microservice:
+```bash
+cd microservices/<select_service>
+```
+#### 3️⃣ Build & Run with Docker Compose
+
+Run these in the Terminal A, then B (linearly):
+```bash
+docker-compose up --build
+```
+
+This builds and starts the registry + the microservice containers.
+You should now see them running inside Docker Desktop → Containers.
+
+#### 4️⃣ Access the MySQL Database (Optional)
+
+If you want to inspect or interact with the database:
+
+- Open Docker Desktop → Containers
+- Expand the registry stack
+- Find db container → click the ellipsis → Open in Terminal
+- Run:
+    ```bash
+    mysql -u root -p
+    ```
+    > Password: group4
+
+You're now in the SQL terminal and can inspect the registry + service DB tables.
+
+#### 5️⃣ Local Service URLs
+
+🔧 Service Registry	http://127.0.0.1:7993
+🛩️ Flight Search [localhost:8080](http://127.0.0.1:8080)
+🔍 Live Flight Tracking [localhost:8080](http://127.0.0.1:8080)
+💱 Currency Converter [localhost:8080](http://127.0.0.1:8080)
+🌦️ Airport Weather Forecast [localhost:8080](http://127.0.0.1:8080)
+🏝️ Destination Wishlist [localhost:8080](http://127.0.0.1:8080)
+
+---
+
+### Project Overview
+This project was created for CS4471: Software Architecture. Our goal was to design and implement a complete microservices ecosystem from scratch, including:
+- a custom-built service registry
+- multiple independent microservices
+- containerization + orchestration
+- cloud deployment considerations
+- architectural documentation (context, quality, structure, & more)
+
+<br>
+
+🗂️ Implemented Microservices
+\> S1   Flight Search Service	🛩️
+\> S2	Live Flight Tracking Service	🔍👀
+\> S4	Currency Converter Service	💱
+\> S5	Airport Weather Forecast Service	🌦️
+\> S8	Destination Wishlist Service	🏝️
+
+More details (API endpoints, workflows, etc.) will be added once all services are finalized.
+
+> [S3, S6, S7] were dropped due to time constraints.
+
+---
+
+### 🛠️ Tech Stack
+
+We used a modern industry-aligned toolset to build and orchestrate the system:
+
+* **Docker** — Containerization
+* **MySQL** — Persistent service registry + microservice data
+* **AWS** — Cloud hosting & infrastructure (future deployment path)
+* **Python (Flask)** — Microservice development
+* **React** — Frontend for interacting with services
+* **Git** — Version control
+
+We also implemented techniques such as:
+* **Load Balancing**,
+* **Microservice Health Checks**,
+* **Microservice Discovery**,
+* *Redis Cache (WIP)*
+* ...
+
+---
+
+### 📚 Architecture & Documentation 
+
+We’ve produced the following documentation (to be added to the repo soon):
+
+**High-Level Architecture Diagrams**
+
+**Quality Views**
+
+**Structural Views**
+
+**Progress Report 1 Presentation** ([link](https://docs.google.com/presentation/d/1vAZWEF2lelkwSzCr29qFf9iV2MIH415dUiA6GrElisE/edit?usp=sharing))
+
+**Progress Report 2 Presentation** ([link](https://docs.google.com/presentation/d/1W_QkgMWos6S_lUP6HcFW8jcfWjvJ-DfM/edit?usp=sharing&ouid=115699878098283755598&rtpof=true&sd=true))
+
+
+---
+
+#### Made with ❤️
+
+**Group 4** — Software Architecture, Western University
+```json
+team = [
+    Naseer Rehman (Liason),
+    Muhammad Imran Asghar,
+    Galen Meesters,
+    Devarshi Patel,
+    Tyler Larson
+]
+```
