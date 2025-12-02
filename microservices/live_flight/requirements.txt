@@ -1,0 +1,4 @@
+flask
+requests
+ratelimit
+python-dotenv
