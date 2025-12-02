@@ -2,9 +2,9 @@ FROM python:3.10-slim
 
 WORKDIR /svc
 
-COPY microservices/core/microservice-working-template-service/requirements.txt .
+COPY microservices/airport_weather_forecast/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY microservices /svc/microservices
 
-CMD ["python", "-m", "microservices.core.microservice-working-template-service.index"]
+CMD ["python", "-m", "microservices.airport_weather_forecast.index"]
