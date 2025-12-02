@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: ../../
+      dockerfile: microservices/live_flight/Dockerfile
+    ports:
+      - "8084:8084"
+    env_file:
+      - ./.env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
