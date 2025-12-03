@@ -4,6 +4,10 @@ The Currency Converter microservice provides exchange-rate conversion using an e
 
 ---
 
+### Building Frontend
+- `cd frontend`, and then run `npm run build`. It should create a build folder `./frontend/dist/`.
+  - index.py will serve whatever is in that `dist` folder.
+
 ## API Endpoints
 
 ### `GET /convert?from=USD&to=EUR&amount=100`
@@ -22,7 +26,3 @@ The Currency Converter microservice provides exchange-rate conversion using an e
   "converted_amount": 92.51,
   "rate": 0.9251
 }
-
-### Building Frontend
-- `cd frontend`, and then run `npm run build`. It should create a build folder `./frontend/dist/`.
-  - index.py will serve whatever is in that `dist` folder.
