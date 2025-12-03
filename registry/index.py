@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 import mysql.connector
 import uuid
 import jwt
@@ -19,7 +19,7 @@ DB_PW=os.getenv('DB_PW')
 DB_NAME=os.getenv('DB_NAME')
 DB_HOST=os.getenv('DB_HOST')
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./static', static_url_path='/')
 app.config['SECRET KEY'] = SECRET_KEY
 
 
@@ -181,3 +181,13 @@ def remove_service(user=None, access=None):
         cursor.close()
         conn.close()
         return jsonify({'message': 'Service removed successfully'}), 200
+    
+
+
+@app.route("/", methods=["GET"])
+def serve_react_app():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route("/<path:path>", methods=["GET"])
+def serve_static_files(path):
+    return send_from_directory(app.static_folder, path)

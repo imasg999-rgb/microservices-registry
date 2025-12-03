@@ -39,7 +39,6 @@ const Flight = ({ flightInfo }: any) => {
         </div>
       </div>
     </div>
-
   );
 };
 

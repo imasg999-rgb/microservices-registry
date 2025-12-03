@@ -1,0 +1,41 @@
+.search-bar-container {
+  width: 80%;
+  margin: auto;
+}
+
+.search-bar {
+  width: 100%;
+}
+
+.label-container {
+  text-align: left;
+}
+
+.search-bar__label {
+
+}
+
+.textfield-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.search-bar__textfield {
+  padding: 0.5rem;
+  border-radius: 0.5em;
+  border: 1px solid black;
+  width: 75%;
+}
+
+.search-bar__submit {
+  width: 25%;
+  color: white;
+  background: rgb(100, 150, 200);
+  border-radius: 0.5em;
+}
+
+.search-bar__submit:hover {
+  background: rgb(110, 165, 220);
+  cursor: pointer;
+}
