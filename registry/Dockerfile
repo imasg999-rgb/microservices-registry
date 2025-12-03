@@ -20,4 +20,4 @@ RUN mkdir -p ./static
 COPY --from=frontend-builder /app/frontend/dist ./static
 
 EXPOSE 4152
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:4152", "index:app"]
+CMD ["gunicorn", "-c", "gunicorn_config.py", "index:app"]

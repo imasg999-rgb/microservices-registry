@@ -8,8 +8,10 @@ from functools import wraps
 from dotenv import load_dotenv
 import secrets
 import os
-
-
+from flask_apscheduler import APScheduler
+import logging
+import sys
+import requests
 
 load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -19,20 +21,68 @@ DB_PW=os.getenv('DB_PW')
 DB_NAME=os.getenv('DB_NAME')
 DB_HOST=os.getenv('DB_HOST')
 
+class Config(object):
+    SCHEDULER_API_ENABLED = True
+    
 app = Flask(__name__, static_folder='./static', static_url_path='/')
 app.config['SECRET KEY'] = SECRET_KEY
+app.config.from_object(Config())
+
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+
+stream_handler = logging.StreamHandler(sys.stdout)
+if not root_logger.handlers:
+    root_logger.addHandler(stream_handler)
+logger = logging.getLogger(__name__)
+logger.info("testing logger 111")
 
 
 
+def health_check():
+    services = fetch_services_from_database()
+    logger.info(f"found {len(services)} services")
+    for service in services:
+        service_id = service["id"]
+        service_url = service["url"]
+        logger.info(f"preforming health check for service id: {service_id} url: {service_url}")
+        try:
+            response =  requests.get(
+                url=f"{service_url}health"
+            )
+            response.raise_for_status()
+            logger.info(f"health check response: {response}")
+        except Exception as e:
+            logger.info(f"health check failed {e} removing from registry...")
+            success = remove_service_from_database(service_id)
+            logger.info(f"Success? {success}")
+            
+
+
+scheduler = APScheduler()
+scheduler.init_app(app)
+scheduler.remove_all_jobs()
+scheduler.add_job(
+    id='health_check_job', 
+    func=health_check, 
+    trigger='interval', 
+    seconds=5
+)
 def get_reg_db_conn():
-    mydb = mysql.connector.connect(
-    host=DB_HOST,
-    user=DB_USER,
-    password=DB_PW,
-    database=DB_NAME,
-    port = 3306
-    )
-    return mydb
+    try:
+        mydb = mysql.connector.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PW,
+        database=DB_NAME,
+        port = 3306
+        )
+        return mydb
+    except mysql.connector.Error as err:
+        logger.error(f"Database connection error: {err}")
+        raise
+
+
 # POST Endpoint for auth
 @app.route('/login', methods=['POST'])
 def login():
@@ -103,19 +153,29 @@ def auth_required(f):
         return f(username, access,*args,**kwargs)
     return decorated
         
+
+
+def fetch_services_from_database():
+    sql = "SELECT * FROM services;"
+    conn = None
+    cursor = None
+    try:
+        conn = get_reg_db_conn()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute(sql)
+        reg_services = cursor.fetchall()
+        return reg_services
+    except Exception as e:
+        logger.error(f"Error executing scheduled database fetch: {e}")
+        return []
+    finally:
+        if cursor: cursor.close()
+        if conn: conn.close()
+
 # GET Endpoint
 @app.route('/services')
 def get_services(user=None, access=None):
-    sql = """
-    SELECT * FROM services;
-    """
-    params = []
-    conn = get_reg_db_conn()
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute(sql, params)
-    reg_services = cursor.fetchall()
-    cursor.close()
-    conn.close()
+    reg_services = fetch_services_from_database()
     return jsonify(reg_services), 200
 
 # POST Provision Endpoint
@@ -151,13 +211,9 @@ def add_service(user=None, access=None):
     conn.close()
     return jsonify({'message': f'Service added successfully',"UUID": uuid_arg, "password": password}), 201
 
-# DELETE Deprovision Endpoint
-@app.route('/services', methods=['DELETE'])
-@auth_required
-def remove_service(user=None, access=None):
-    service_uuid = request.get_json().get('id')
-    if access == "NONE" or (access == "SELF" and service_uuid != user):
-        return jsonify({'message': 'Unauthorized '}), 401
+
+
+def remove_service_from_database(service_uuid):
     sql = """
     DELETE FROM services
     WHERE id = %s;
@@ -175,11 +231,23 @@ def remove_service(user=None, access=None):
         conn.rollback()
         cursor.close()
         conn.close()
-        return jsonify({'error': f'Service with UUID: {service_uuid} not found.'}), 404
+        return False
     else:
         conn.commit()
         cursor.close()
         conn.close()
+        return True
+# DELETE Deprovision Endpoint
+@app.route('/services', methods=['DELETE'])
+@auth_required
+def remove_service(user=None, access=None):
+    service_uuid = request.get_json().get('id')
+    if access == "NONE" or (access == "SELF" and service_uuid != user):
+        return jsonify({'message': 'Unauthorized '}), 401
+    deletion = remove_service_from_database(service_uuid)
+    if not deletion:
+        return jsonify({'error': f'Service with UUID: {service_uuid} not found.'}), 404
+    else:
         return jsonify({'message': 'Service removed successfully'}), 200
     
 
@@ -191,3 +259,8 @@ def serve_react_app():
 @app.route("/<path:path>", methods=["GET"])
 def serve_static_files(path):
     return send_from_directory(app.static_folder, path)
+
+try:
+    scheduler.start()
+except Exception as e:
+    logger.error(f"Scheduler failed to start: {e}")
