@@ -256,8 +256,8 @@
                 defaultDiv.innerHTML =
                     '<div class="loading">Loading forecast...</div>';
                 
-                latitude = 43.7064
-                longitude = -79.3986
+                lat = 43.7064
+                lon = -79.3986
 
                 try {
                     // Try Canadian airline codes:
@@ -306,23 +306,50 @@
                 searchSection.style.display = 'block';
 
                 try {
-                    const res = await fetch(
-                        `/api/weather?city=${encodeURIComponent(city)}&country=${encodeURIComponent(country)}`
-                    );
-                    const data = await res.json();
+                    const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&country=${encodeURIComponent(country)}`;
+                    
+                    const res = await fetch(geoUrl);
+                    const geoData = await res.json();
 
-                    if (data.error) {
-                        searchResultsDiv.innerHTML = `<div class="error">${data.error}</div>`;
+                    if (geoData.error) {
+                        searchResultsDiv.innerHTML = `<div class="error">${geoData.error}</div>`;
                         return;
                     }
 
-                    if (data.count === 0) {
+                    if (geoData.count === 0) {
                         searchResultsDiv.innerHTML = `
                             <div class="no-results">
                                 No results found matching "${city}" and "${country}"<br>
                             </div>
                         `;
                         return;
+                    }
+
+                    const lat = geoData.results[0].latitude;
+                    const lon = geoData.results[0].longitude;
+
+
+                    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&forecast_days=14&timezone=auto`;
+
+                    const weatherRes = await fetch(weatherUrl);
+                    const weatherData = await weatherRes.json();
+
+
+                    let allResults = [];
+
+                    const dates = weatherData.daily.time;
+                    const maxTemps = weatherData.daily.temperature_2m_max;
+                    const minTemps = weatherData.daily.temperature_2m_min;
+                    const precip = weatherData.daily.precipitation_sum;
+
+                    
+                    for (let i = 0; i < dates.length; i++) {
+                        allResults.push({
+                            date: dates[i],
+                            max: maxTemps[i],
+                            min: minTemps[i],
+                            precip: precip[i],
+                        });
                     }
 
                     searchResultsDiv.innerHTML = '';
