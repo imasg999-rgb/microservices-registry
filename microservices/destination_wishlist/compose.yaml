@@ -1,0 +1,9 @@
+services:
+  destination_wishlist:
+    build:
+      context: ../..
+      dockerfile: microservices/destination_wishlist/Dockerfile
+    ports:
+      - "5002:5002"
+    env_file:
+      - ./.env
