@@ -19,7 +19,7 @@ function App() {
       try {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed)) setDestinations(parsed);
-      } catch { }
+      } catch {}
     }
   }, []);
 
@@ -69,7 +69,6 @@ function App() {
     setDescription("");
     setError("");
 
-    //fetch both description + image when Details is clicked
     fetchDescription(destination);
   };
 
@@ -90,9 +89,7 @@ function App() {
         try {
           const body = await res.json();
           if (body.error) msg = body.error;
-        } catch {
-          // ignore JSON parse error
-        }
+        } catch {}
         throw new Error(msg);
       }
 
@@ -133,6 +130,7 @@ function App() {
               placeholder="e.g. Paris"
             />
           </div>
+
           <div className="field">
             <label>Country (optional)</label>
             <input
@@ -143,6 +141,7 @@ function App() {
             />
           </div>
         </div>
+
         <button className="btn-add">Add to wishlist</button>
       </form>
 
@@ -178,6 +177,7 @@ function App() {
                     >
                       Details
                     </button>
+
                     <button
                       className="btn-remove"
                       onClick={() => handleRemove(d.id)}
@@ -216,6 +216,7 @@ function App() {
               )}
 
               {loadingDescription && <p className="loading">Loading…</p>}
+
               {!loadingDescription && description && (
                 <p className="description">{description}</p>
               )}

@@ -5,7 +5,7 @@ WORKDIR /svc
 COPY microservices/destination_wishlist/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY microservices/destination_wishlist /svc/microservices/destination_wishlist
+COPY microservices /svc/microservices
 
 EXPOSE 5002
 
