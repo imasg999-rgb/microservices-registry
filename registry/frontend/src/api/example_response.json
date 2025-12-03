@@ -1,0 +1,26 @@
+[
+  {
+    "description": "Micro service to retrieve weather forecast for given location.",
+    "id": "48bcf06a-f9c8-4b7f-a8c2-338c7762fb54",
+    "name": "airport_weather_forecast",
+    "url": "https://we-af8b7e20f67648cead41df4e07c514bc.ecs.us-east-1.on.aws/"
+  },
+  {
+    "description": "A service that retrieves live status data for a given flight and shows flights nearby Western.",
+    "id": "8e036ad7-b708-4b32-8b25-51bbea013dfc",
+    "name": "live-flight",
+    "url": "https://li-40b92eb981954e4581668dc1cc36b298.ecs.us-east-1.on.aws/"
+  },
+  {
+    "description": "Currency conversion microservice",
+    "id": "91f9a6a4-5a5b-416d-9ab8-92a5110ea34b",
+    "name": "currency_converter",
+    "url": "https://cu-a0042894c410436ab2c094d13df074cb.ecs.us-east-1.on.aws/"
+  },
+  {
+    "description": "A service for searching flight information.",
+    "id": "9f934f23-5ac2-47f8-b99c-c74222a5ba0c",
+    "name": "flight-search",
+    "url": "https://fl-de3f8a0e6af748038ef355972a20521b.ecs.us-east-1.on.aws/"
+  }
+]
