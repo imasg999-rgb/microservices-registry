@@ -3,6 +3,7 @@ import sys
 import logging
 
 import requests
+from ratelimit import limits, RateLimitException
 
 EXCHANGE_API_URL = os.getenv(
     "EXCHANGE_API_URL",
@@ -17,6 +18,16 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
+
+ONE_HOUR = 3600
+@limits(calls=5, period=ONE_HOUR)
+def call_exchange_api(headers: dict, params: dict) -> requests.Response:
+    return requests.get(
+        EXCHANGE_API_URL,
+        headers=headers,
+        params=params,
+        timeout=5,
+    )
 
 
 class CurrencyConversionError(Exception):
@@ -33,20 +44,26 @@ def convert_currency(from_currency: str, to_currency: str, amount: float) -> dic
 
     if amount < 0:
         raise ValueError("Amount must be non-negative.")
-    headers = {"apikey": EXCHANGE_API_KEY}
 
+    headers = {"apikey": EXCHANGE_API_KEY}
     params = {
         "from": from_currency.upper(),
         "to": to_currency.upper(),
         "amount": amount,
     }
 
-    resp = requests.get(
-        EXCHANGE_API_URL,
-        headers=headers,
-        params=params,
-        timeout=5,
-    )
+    try:
+        resp = call_exchange_api(headers=headers, params=params)
+    except RateLimitException as e:
+        #translate this into a provider error so the Flask route
+        # can turn it into a nice HTTP response
+        logger.warning(
+            "Currency conversion rate limit exceeded: %s",
+            str(e),
+        )
+        raise CurrencyProviderError(
+            "Rate limit for currency conversion exceeded. Please try again later."
+        )
 
     if resp.status_code != 200:
         logger.error(
@@ -79,6 +96,7 @@ def convert_currency(from_currency: str, to_currency: str, amount: float) -> dic
 
     if rate is None and amount:
         rate = result / amount
+
     return {
         "from": from_currency.upper(),
         "to": to_currency.upper(),

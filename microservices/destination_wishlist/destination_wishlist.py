@@ -1,10 +1,15 @@
 import logging
 import requests
+from ratelimit import limits, RateLimitException
 
 logger = logging.getLogger(__name__)
 
 WIKI_SUMMARY_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/{title}"
 
+ONE_HOUR = 3600
+@limits(calls=5, period=ONE_HOUR)
+def call_wiki_api(url: str, headers: dict) -> requests.Response:
+    return requests.get(url, headers=headers, timeout=5)
 
 class DestinationError(Exception):
     pass
@@ -25,9 +30,14 @@ def get_destination_description(name: str, country: str | None = None) -> dict:
     }
 
     try:
-        resp = requests.get(url, headers=headers, timeout=5)
+        resp = call_wiki_api(url, headers)
         logger.info("API status=%s", resp.status_code)
         logger.debug("API response preview: %s", resp.text[:200])
+
+    except RateLimitException as e:
+        logger.warning("API rate limit hit: %s", e)
+        raise DestinationError("Rate limit exceeded. Please try again later.")
+
     except requests.RequestException as e:
         logger.exception("Network error calling Wikipedia")
         raise DestinationError("Failed to contact destination provider.") from e
