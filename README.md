@@ -49,14 +49,19 @@ If you want to inspect or interact with the database:
 
 You're now in the SQL terminal and can inspect the registry + service DB tables.
 
-#### 5️⃣ Local Service URLs
+#### 5️⃣ Microservice URLs
 
-🔧 Service Registry	http://127.0.0.1:7993
-🛩️ Flight Search [localhost:8080](http://127.0.0.1:8080)
-🔍 Live Flight Tracking [localhost:8080](http://127.0.0.1:8080)
-💱 Currency Converter [localhost:8080](http://127.0.0.1:8080)
-🌦️ Airport Weather Forecast [localhost:8080](http://127.0.0.1:8080)
-🏝️ Destination Wishlist [localhost:8080](http://127.0.0.1:8080)
+🔧 Service Registry	http://35.183.109.248:7993/
+
+🛩️ Flight Search [Live](https://fl-de3f8a0e6af748038ef355972a20521b.ecs.us-east-1.on.aws/) (Localhost:8081)
+
+🔍 Live Flight Tracking [Live](https://li-40b92eb981954e4581668dc1cc36b298.ecs.us-east-1.on.aws/) (Localhost:8084)
+
+💱 Currency Converter [Live](https://cu-a0042894c410436ab2c094d13df074cb.ecs.us-east-1.on.aws/) (Localhost:8443)
+
+🌦️ Airport Weather Forecast [Live](https://we-af8b7e20f67648cead41df4e07c514bc.ecs.us-east-1.on.aws/) (Localhost:8088)
+
+🏝️ Destination Wishlist [Live](https://de-d997e67f7e56494381db18389e1de654.ecs.us-east-1.on.aws/) (Localhost:5002)
 
 ---
 
