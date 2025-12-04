@@ -112,11 +112,17 @@ We also implemented techniques such as:
 
 We’ve produced the following documentation (to be added to the repo soon):
 
-**High-Level Architecture Diagrams**
+**Context Model**
 
-**Quality Views**
+![plot](./system%20diagrams/ContextModel.png)
 
-**Structural Views**
+**Cloud Provider Topology**
+
+![plot](./system%20diagrams/CloudProviderTopology.png)
+
+**Component & Connector View**
+
+![plot](./system%20diagrams/Component&Connector.png)
 
 **Progress Report 1 Presentation** ([link](https://docs.google.com/presentation/d/1vAZWEF2lelkwSzCr29qFf9iV2MIH415dUiA6GrElisE/edit?usp=sharing))
 
